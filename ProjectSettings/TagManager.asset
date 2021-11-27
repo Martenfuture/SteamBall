@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Kill
   - Checkpoint
+  - Ground
   layers:
   - Default
   - TransparentFX
