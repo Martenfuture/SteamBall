@@ -27,6 +27,10 @@ public class KillSwitch : MonoBehaviour
 
     void TeleportToCheckpoint ()
     {
-        transform.position = LastCheckpoint.transform.position + new Vector3 (0,1,0);
+        if (LastCheckpoint != null)
+            {
+
+            transform.position = LastCheckpoint.transform.position + new Vector3(0, 1, 0);
+        }
     }
 }
