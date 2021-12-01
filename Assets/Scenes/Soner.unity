@@ -715,6 +715,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6095567007978107713, guid: 71b8078763964c848b3a39619056af0b, type: 3}
+      propertyPath: bounceAmount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6095567007978107716, guid: 71b8078763964c848b3a39619056af0b, type: 3}
       propertyPath: m_Name
       value: Bumper

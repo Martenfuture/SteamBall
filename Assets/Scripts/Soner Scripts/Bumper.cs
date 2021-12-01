@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bumper : MonoBehaviour
 {
 
-    [SerializeField] float bounceAmount = 300;
+    [SerializeField] float bounceAmount = 10;
 
     private void OnTriggerEnter(Collider other)
     {
