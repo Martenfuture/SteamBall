@@ -7,31 +7,39 @@ public class EnemyAiAttack : MonoBehaviour
 {
     [SerializeField] string IdleType;
     [SerializeField] int attackingExitDelay;
+    [SerializeField] float viewAngle;
+    [SerializeField] float maxDistance;
+    [SerializeField] LayerMask layerMask;
+
+    [SerializeField] GameObject player;
     
     private bool playerInRange;
     private bool isFollowing;
     private NavMeshAgent agent;
     private GameObject parent;
-    private GameObject player;
 
     private void Start()
     {
         parent = transform.parent.gameObject;
         agent = parent.GetComponent<NavMeshAgent>();
     }
-    private void OnTriggerEnter(Collider other)
+
+    private void Update()
     {
-        if (other.gameObject.tag == "Player")
+        //Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
+        //Debug.DrawRay(transform.position, transform.forward, Color.red);
+        RaycastHit hit;
+        Vector3 targetPosition = player.transform.position;
+        Vector3 enemyPosition = transform.position;
+        float angle = Vector3.Angle(transform.forward, targetPosition - enemyPosition);
+        if (Physics.Raycast(enemyPosition, targetPosition - enemyPosition, out hit,maxDistance ,layerMask) && hit.transform.gameObject == player && angle < viewAngle)
         {
-            player = other.gameObject;
             StartFollowing();
             playerInRange = true;
+        } else if (playerInRange)
+        {
+            StartCoroutine(DelayedExit());
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        StartCoroutine(DelayedExit());
     }
 
     private void Follow()

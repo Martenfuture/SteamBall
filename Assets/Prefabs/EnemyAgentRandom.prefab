@@ -58,6 +58,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdleType: random
+  attackingExitDelay: 5
+  viewAngle: 90
+  maxDistance: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  player: {fileID: 0}
 --- !u!1 &4665322542403035073
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,8 +200,5 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 0
   walkPointRange: 5
   isPatroling: 1
