@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class KillSwitch : MonoBehaviour
 {
-    public GameObject LastCheckpoint;
-
+    public Vector3 LastCheckpoint;
+    private void Start()
+    {
+        LastCheckpoint = transform.position;
+    }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Kill")
@@ -18,7 +21,7 @@ public class KillSwitch : MonoBehaviour
     {
         if (other.tag == "Checkpoint")
         {
-            LastCheckpoint = other.gameObject;
+            LastCheckpoint = other.gameObject.transform.position;
         } else if (other.tag == "Kill")
         {
             TeleportToCheckpoint();
@@ -27,10 +30,6 @@ public class KillSwitch : MonoBehaviour
 
     void TeleportToCheckpoint ()
     {
-        if (LastCheckpoint != null)
-            {
-
-            transform.position = LastCheckpoint.transform.position + new Vector3(0, 1, 0);
-        }
+        transform.position = LastCheckpoint + new Vector3(0, 1, 0);
     }
 }
