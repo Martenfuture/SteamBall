@@ -10,7 +10,7 @@ public class PlatformAttach : MonoBehaviour
     {
         if(other.gameObject == Player)
         {
-            Player.transform.parent = transform;
+            Player.transform.parent.SetParent(transform);
 
         }
     
@@ -19,7 +19,7 @@ public class PlatformAttach : MonoBehaviour
     {
         if(other.gameObject == Player)
         {
-            Player.transform.parent = null;
+            Player.transform.parent.SetParent(null);
 
         }
     }
