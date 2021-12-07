@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class ScoringSystem : MonoBehaviour
@@ -14,7 +15,7 @@ public class ScoringSystem : MonoBehaviour
     {
         collectSound.Play();
         theScore += 50;
-        scoreText.GetComponent<Text>().text = "SCORE: " + theScore;
+        scoreText.GetComponent<TextMeshProUGUI>().SetText("SCORE: " + theScore);
         Destroy(gameObject);
     }
 
