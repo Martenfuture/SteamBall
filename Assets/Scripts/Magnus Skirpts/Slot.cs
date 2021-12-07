@@ -1,18 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   public bool hasItem = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   Sprite defaultSprite;
+   Text amountText;
+
+   private void Start()
+   {
+	defaultSprite = GetComponent<Image>().sprite;
+	amountText = transform.GetChild(0).GetComponent<Text>();
+   }
+
+
+
+   private void Update()
+   {
+		  CheckforItem();
+   }
+
+   public void CheckforItem()
+   {
+		  if(transform.childCount >1)
+		  {
+				Item i = transform.GetChild(1).GetComponent<Item>();
+				hasItem = true;
+				GetComponent<Image>().sprite = i.itemSprite;
+
+		  }
+		  else 
+		  {
+			GetComponent<Image>().sprite = defaultSprite;
+			amountText.text = "";
+		  }
+   }
 }
