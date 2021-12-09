@@ -8,15 +8,11 @@ using TMPro;
 public class ScoringSystem : MonoBehaviour
 {
     public GameObject scoreText;
-    public int theScore;
-    public AudioSource collectSound;
+    public static int theScore;
 
-    void OnTriggerEnter(Collider other)
+    void Update()
     {
-        collectSound.Play();
-        theScore += 50;
         scoreText.GetComponent<TextMeshProUGUI>().SetText("SCORE: " + theScore);
-        Destroy(gameObject);
     }
 
 
