@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-   public bool hasItem = false;
+   public Item	slotsItem;
 
    Sprite defaultSprite;
    Text amountText;
@@ -27,13 +27,15 @@ public class Slot : MonoBehaviour
    {
 		  if(transform.childCount >1)
 		  {
-				Item i = transform.GetChild(1).GetComponent<Item>();
-				hasItem = true;
-				GetComponent<Image>().sprite = i.itemSprite;
+				slotsItem = transform.GetChild(1).GetComponent<Item>();
+				GetComponent<Image>().sprite = slotsItem.itemSprite;
+				if(slotsItem.amountInStack > 1)
+					amountText.text = slotsItem.amountInStack.ToString();
 
 		  }
 		  else 
 		  {
+			slotsItem =	null;
 			GetComponent<Image>().sprite = defaultSprite;
 			amountText.text = "";
 		  }

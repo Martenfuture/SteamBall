@@ -15,4 +15,23 @@ public class Inventory : MonoBehaviour
             inventoryObject.SetActive(!inventoryObject.activeInHierarchy);
         }
     }
+
+    public void Additem(Item itemToBeAdded, Item startingItem = null)
+    {
+        foreach(Slot i in slots)
+        {
+            if(!i.slotsItem)
+            {
+                itemToBeAdded.transform.parent = i.transform;
+                return;
+            }
+        }
+
+    }
+
+    void OnTriggerEnter (Collider col)
+    {
+        if(col.GetComponent<Item>())
+            Additem(col.GetComponent<Item>());
+    }
 }
