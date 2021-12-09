@@ -4937,7 +4937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 695133370}
   m_Layer: 0
-  m_Name: PS_Teleport_Tut
+  m_Name: Teleport Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
