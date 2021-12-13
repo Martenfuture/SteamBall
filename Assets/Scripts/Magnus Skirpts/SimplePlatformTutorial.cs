@@ -5,7 +5,7 @@ using UnityEngine;
 public class SimplePlatformTutorial : MonoBehaviour
 {
 
-    [SerializeField]
+    public
     float speed;
 
     [SerializeField]

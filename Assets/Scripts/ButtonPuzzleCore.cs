@@ -7,7 +7,11 @@ public class ButtonPuzzleCore : MonoBehaviour
     public GameObject[] ButtonVisual;
     public GameObject[] ButtonTrigger;
 
+    public int id;
+
+    public static ButtonPuzzleCore instance;
     private int CurrentButtonNumber;
+
 
     private void Start()
     {
@@ -16,12 +20,16 @@ public class ButtonPuzzleCore : MonoBehaviour
     }
     public void PressButton(GameObject Button)
     {
+        
         if (Button == ButtonTrigger[CurrentButtonNumber])
         {
             ButtonVisual[CurrentButtonNumber].SetActive(false);
             if (CurrentButtonNumber != ButtonTrigger.Length - 1)
             {
                 CurrentButtonNumber++;
+            } else
+            {
+                GameEvents.puzzleButton.ButtonTriggerEnter(id);
             }
         }
         else
