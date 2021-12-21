@@ -26,7 +26,7 @@ public class Rotator : MonoBehaviour
       if(rotate)
         transform.rotation = Quaternion.Lerp(transform.rotation , Quaternion.Euler(reverseQuaternion) ,Time.deltaTime * lerpTime);
       if(rotateConstantly && !rotate)
-        transform.Rotate(Vector3.forward * RotateAmound); //right //up /forward
+        transform.Rotate(Vector3.up * RotateAmound); //right //up /forward
     }
     public void snapRotation()
     {
