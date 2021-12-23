@@ -6,6 +6,7 @@ public class ButtonPuzzleCore : MonoBehaviour
 {
     public GameObject[] ButtonVisual;
     public GameObject[] ButtonTrigger;
+    public bool IsRandom;
 
     public int id;
 
@@ -15,7 +16,7 @@ public class ButtonPuzzleCore : MonoBehaviour
 
     private void Start()
     {
-        GenerateButtonOrder();
+        if (IsRandom) GenerateButtonOrder();
         ShowButtonOrder();
     }
     public void PressButton(GameObject Button)
