@@ -14,6 +14,7 @@ public class EnemyAiRandom : MonoBehaviour
     private NavMeshAgent agent;
 
     private bool walkPointSet;
+    private bool walkPointReached;
     private Vector3 walkPoint;
 
     private Vector3 startPoint;
@@ -29,6 +30,14 @@ public class EnemyAiRandom : MonoBehaviour
         StartCoroutine(PatroleCoroutine());
     }
 
+    private void Update()
+    {
+        if (isPatroling && walkPointReached)
+        {
+            StartCoroutine(PatroleCoroutine());
+        }
+    }
+
     private void Patrole()
     {
         while (!walkPointSet)
@@ -42,12 +51,10 @@ public class EnemyAiRandom : MonoBehaviour
 
     IEnumerator PatroleCoroutine()
     {
-        isPatroling = true;
-        while (isPatroling)
-        {
-            Patrole();
-            yield return new WaitForSeconds(Random.Range(5, 10));
-        }
+        walkPointReached = false;
+        Patrole();
+        yield return new WaitForSeconds(Random.Range(5, 10));
+        walkPointReached = true;
     }
 
 
@@ -58,13 +65,11 @@ public class EnemyAiRandom : MonoBehaviour
 
         walkPoint = new Vector3(startPoint.x + randomX, startPoint.y, startPoint.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-            walkPointSet = true;
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))    walkPointSet = true;
     }
 
     public void StartPatroling()
     {
         isPatroling = true;
-        StartCoroutine(PatroleCoroutine());
     }
 }
