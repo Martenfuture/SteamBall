@@ -10,8 +10,13 @@ public class ButtonPuzzleCore : MonoBehaviour
 
     public int id;
 
+    public int wrongButtonTries;
+
     public static ButtonPuzzleCore instance;
     private int CurrentButtonNumber;
+    private int wrongButtons;
+
+    private bool buttonsResetet;
 
 
     private void Start()
@@ -21,21 +26,28 @@ public class ButtonPuzzleCore : MonoBehaviour
     }
     public void PressButton(GameObject Button)
     {
-        
-        if (Button == ButtonTrigger[CurrentButtonNumber])
-        {
-            ButtonVisual[CurrentButtonNumber].SetActive(false);
-            if (CurrentButtonNumber != ButtonTrigger.Length - 1)
+        if (!buttonsResetet) {
+            if (Button == ButtonTrigger[CurrentButtonNumber])
             {
-                CurrentButtonNumber++;
-            } else
-            {
-                GameEvents.puzzleButton.ButtonTriggerEnter(id);
+                ButtonVisual[CurrentButtonNumber].GetComponent<Renderer>().material.SetVector("Vector3_b506aa2ca3f742a988d071bf89bf80d1", new Vector4(0,1,0));
+                if (CurrentButtonNumber != ButtonTrigger.Length - 1)
+                {
+                    CurrentButtonNumber++;
+                } else
+                {
+                    GameEvents.puzzleButton.ButtonTriggerEnter(id);
+                }
             }
-        }
-        else
-        {
-            Debug.Log("Wrong Button");
+            else
+            {
+                StartCoroutine(BlinkingSingleCoroutine(Button));
+                Debug.Log("Wrong Button");
+                wrongButtons++;
+                if (wrongButtons >= wrongButtonTries)
+                {
+                    resetButtons();
+                }
+            }
         }
     }
 
@@ -49,11 +61,50 @@ public class ButtonPuzzleCore : MonoBehaviour
         // needs animation or something cool
         for (int n = 0; n <= ButtonVisual.Length - 1; n++)
         {
+            if (buttonsResetet)
+            {
+                n = ButtonVisual.Length; 
+                break;
+            }
             GameObject showButton = ButtonVisual[n];
-            showButton.transform.position += new Vector3(0, 2, 0);
+            showButton.GetComponent<Renderer>().material.SetVector("Vector3_b506aa2ca3f742a988d071bf89bf80d1", new Vector4(1, 0, 0));
             yield return new WaitForSeconds(2);
-            showButton.transform.position += new Vector3(0, -2, 0);
+            showButton.GetComponent<Renderer>().material.SetVector("Vector3_b506aa2ca3f742a988d071bf89bf80d1", new Vector4(0, 0, 0));
         }
+    }
+
+    IEnumerator BlinkingSingleCoroutine(GameObject Button)
+    {
+        Button.GetComponent<Renderer>().material.SetVector("Vector3_b506aa2ca3f742a988d071bf89bf80d1", new Vector4(1, 0, 0));
+        yield return new WaitForSeconds(2);
+        Button.GetComponent<Renderer>().material.SetVector("Vector3_b506aa2ca3f742a988d071bf89bf80d1", new Vector4(0, 0, 0));
+    }
+
+    private void resetButtons()
+    {
+        buttonsResetet = true;
+        wrongButtons = 0;
+        CurrentButtonNumber = 0;
+        StartCoroutine(BlinkingResetCoroutine());
+    }
+
+    IEnumerator BlinkingResetCoroutine()
+    {
+        for (int n = 0; n <= 5; n++)
+        {
+            foreach (GameObject showButton in ButtonVisual)
+            {
+                showButton.GetComponent<Renderer>().material.SetVector("Vector3_b506aa2ca3f742a988d071bf89bf80d1", new Vector4(1, 0, 0));
+            }
+            yield return new WaitForSeconds(0.5f);
+            foreach (GameObject showButton in ButtonVisual)
+            {
+                showButton.GetComponent<Renderer>().material.SetVector("Vector3_b506aa2ca3f742a988d071bf89bf80d1", new Vector4(0, 0, 0));
+            }
+            yield return new WaitForSeconds(0.5f);
+        }
+        buttonsResetet = false;
+        ShowButtonOrder();
     }
 
     private void GenerateButtonOrder()
