@@ -14,22 +14,28 @@ public class NumberPuzzleCore : MonoBehaviour
     public int id;
 
     public static ButtonPuzzleCore instance;
-    private string CurrentButtonNumber;
+    private string CurrentButtonNumber = "";
     private TextMeshPro textMeshDisplay;
     private void Start()
     {
         textMeshDisplay = VisualDisplay.GetComponent<TextMeshPro>();
+        textMeshDisplay.text = "";
+        for (int n = 1; n <= SolutionNumber.Length; n++)
+        {
+            textMeshDisplay.text += "- ";
+        }
     }
     public void PressButton(int ButtonNumber)
     {
-        CurrentButtonNumber += ButtonNumber.ToString();
-
-        TextMeshPro textMesh = VisualDisplay.GetComponent<TextMeshPro>();
-        textMesh.text = (CurrentButtonNumber);
 
         if (CurrentButtonNumber.Length >= (SolutionNumber.Length + 2))
         {
             StartCoroutine(BlinkingCoroutine(Color.red));
+        }
+        else
+        {
+            CurrentButtonNumber += ButtonNumber.ToString();
+            textMeshDisplay.text = (CurrentButtonNumber);
         }
     }
 
