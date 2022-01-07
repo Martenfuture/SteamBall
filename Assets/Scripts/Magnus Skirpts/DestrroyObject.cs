@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class DestrroyObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.tag == "Enemy")
