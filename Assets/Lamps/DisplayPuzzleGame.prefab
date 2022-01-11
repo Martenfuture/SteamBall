@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 3999773929633489290}
   - component: {fileID: 12902390049222191}
   - component: {fileID: 2866859944650726117}
+  - component: {fileID: 4119295262404236509}
   m_Layer: 0
   m_Name: DisplayPuzzleGame
   m_TagString: Untagged
@@ -253,3 +254,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4119295262404236509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4380275783723940656}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0023971335, y: 0.0062815677, z: 0.0034046771}
+  m_Center: {x: 0.00000023852004, y: 0, z: 0.0017023385}
