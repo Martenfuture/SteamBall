@@ -7,6 +7,8 @@ public class BallController : MonoBehaviour
 
 	public float speed;
 	public float jumpHeight;
+	public GameObject camera;
+
 
 	private Rigidbody rb;
 	
@@ -20,7 +22,7 @@ public class BallController : MonoBehaviour
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
 
-		Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+		Vector3 movement = Quaternion.Euler(0, camera.transform.eulerAngles.y, 0) * new Vector3(moveHorizontal, 0.0f, moveVertical);
 
 		rb.AddForce(movement * speed);
 
