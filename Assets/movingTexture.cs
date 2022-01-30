@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movingTexture : MonoBehaviour
+public class movingTexture1 : MonoBehaviour
 {
     public float scrollSpeed = 0.1f;
     Renderer rend;
