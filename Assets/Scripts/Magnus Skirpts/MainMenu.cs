@@ -48,6 +48,6 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Magnus");
+        SceneManager.LoadScene("gearcity 1");
     }
 }
