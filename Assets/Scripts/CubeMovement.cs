@@ -38,7 +38,7 @@ public class CubeMovement : MonoBehaviour
     {
         if (playerInRange && !objectAttacked)
         {
-            transform.SetParent(player.transform.parent.GetChild(1));
+            transform.SetParent(player.transform.parent.GetChild(3));
             transform.localPosition = positionOffset;
             transform.localRotation = rotationOffset;
             GetComponent<BoxCollider>().size = new Vector3(0,0,0);
