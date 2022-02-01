@@ -472,7 +472,7 @@ MonoBehaviour:
   m_YAxis:
     Value: 0.5
     m_SpeedMode: 0
-    m_MaxSpeed: 2
+    m_MaxSpeed: 0
     m_AccelTime: 0.2
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
@@ -1540,19 +1540,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &3733838029515615290
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4544176236920840100}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.009999998
-  m_Center: {x: -9.313226e-10, y: 0.0000000041909507, z: 0}
 --- !u!143 &3733838029515615286
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1571,6 +1558,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &3733838029515615290
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4544176236920840100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.009999998
+  m_Center: {x: -9.313226e-10, y: 0.0000000041909507, z: 0}
 --- !u!114 &3733838029515615281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1586,19 +1586,6 @@ MonoBehaviour:
   controller: {fileID: 3733838029515615286}
   cam: {fileID: 3733838030008439415}
   speed: 6
---- !u!114 &3733838029515615287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4544176236920840100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29fe8629b5a830344b16d3772f465ea5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  head: {fileID: 4544176237925937376}
 --- !u!114 &3733838029515615285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,6 +1600,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   jumpHeight: 0
+  camera: {fileID: 0}
+--- !u!114 &3733838029515615287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4544176236920840100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29fe8629b5a830344b16d3772f465ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 4544176237925937376}
 --- !u!1001 &7808596611075002146
 PrefabInstance:
   m_ObjectHideFlags: 0
