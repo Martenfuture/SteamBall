@@ -17,7 +17,7 @@ public class EnemyAiPoint : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        Patrole();
+        StartCoroutine(PatroleCoroutine());
         isPatroling = true;
     }
     private void Update()
