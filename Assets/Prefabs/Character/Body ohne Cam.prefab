@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3734777266348381463}
   m_Layer: 0
-  m_Name: Body
+  m_Name: Body ohne Cam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
