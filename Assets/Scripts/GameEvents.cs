@@ -7,10 +7,12 @@ public class GameEvents : MonoBehaviour
 {
     public static GameEvents puzzleButton;
     public static GameEvents interactionControl;
+    public static GameEvents killControl;
     private void Awake()
     {
         puzzleButton = this;
         interactionControl = this;
+        killControl = this;
     }
 
     private void Update()
@@ -23,6 +25,7 @@ public class GameEvents : MonoBehaviour
 
     public event Action<int> onButtonTriggerEnter;
     public event Action onInteractionEnter;
+    public event Action onKillEnter;
     public void ButtonTriggerEnter(int id)
     {
         if (onButtonTriggerEnter != null)
@@ -33,9 +36,17 @@ public class GameEvents : MonoBehaviour
 
     public void InteractionEnter()
     {
-        if (onButtonTriggerEnter != null)
+        if (onInteractionEnter != null)
         {
             onInteractionEnter();
+        }
+    }
+
+    public void KillEnter()
+    {
+        if (onKillEnter != null)
+        {
+            onKillEnter();
         }
     }
 
