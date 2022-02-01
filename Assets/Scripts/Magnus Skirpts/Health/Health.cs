@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
 
     public event Action<int,int> OnHealthChanged;
 
-    private int currentHealth;
+    public int currentHealth;
 
     private void Start() => SetHealth(maxHealth);
 
