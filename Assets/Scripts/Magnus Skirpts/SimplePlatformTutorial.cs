@@ -96,7 +96,6 @@ public class SimplePlatformTutorial : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.transform.parent.SetParent(transform);
-
         }
     }
 
@@ -104,7 +103,7 @@ public class SimplePlatformTutorial : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.transform.parent = null;
+            other.transform.parent.SetParent(null);
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformAttach : MonoBehaviour
 {
-    public GameObject Player;
+    /*public GameObject Player;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,5 +22,7 @@ public class PlatformAttach : MonoBehaviour
             Player.transform.parent.SetParent(null);
 
         }
-    }
+    }*/
+
+    // Hat keine Verwendung da bereits in SimplePlatformTutorial
 }
