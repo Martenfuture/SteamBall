@@ -10,7 +10,7 @@ Material:
   m_Name: Grass
   m_Shader: {fileID: -6465566751694194690, guid: e0e7d4fa2add3ba4fb2de93d8e64a397, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_cb7a6ebd7c574404b29afe7511c118bf:
-        m_Texture: {fileID: 2800000, guid: d1fa929b9b305204dae09dabd2bb7e71, type: 3}
+        m_Texture: {fileID: 2800000, guid: e3b709c6a5c2aea48978dc3447384c4f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_f273608d66544b718da1c5b22d879150:
@@ -122,6 +122,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_8121924cc5fb41069e98384c01c5f62d: 0
+    - Vector1_bae7022b1a5c4515863ba1e901a61e65: 10
     - Vector1_c531603ef99742a0929486baf41707ec: 0.5
     - _AlphaClip: 0
     - _BASE_COLOR_WEIGHT: 1
