@@ -5302,6 +5302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   jumpHeight: 0
+  camera: {fileID: 1061882566}
 --- !u!114 &576281582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5377,6 +5378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  currentHealth: 0
 --- !u!1001 &652681527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16275,6 +16277,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 80
+  camera: {fileID: 1061882566}
+  rotationOffset: 0
 --- !u!1 &1260404807
 GameObject:
   m_ObjectHideFlags: 0
@@ -16400,6 +16404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  currentHealth: 0
 --- !u!1 &1378214199
 GameObject:
   m_ObjectHideFlags: 0
