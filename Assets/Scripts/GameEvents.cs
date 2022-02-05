@@ -24,6 +24,7 @@ public class GameEvents : MonoBehaviour
     }
 
     public event Action<int> onButtonTriggerEnter;
+    public event Action<bool> onToggleControls;
     public event Action onInteractionEnter;
     public event Action onKillEnter;
     public void ButtonTriggerEnter(int id)
@@ -31,6 +32,14 @@ public class GameEvents : MonoBehaviour
         if (onButtonTriggerEnter != null)
         {
             onButtonTriggerEnter(id);
+        }
+    }
+
+    public void ToggleControls(bool state)
+    {
+        if (onButtonTriggerEnter != null)
+        {
+            onToggleControls(state);
         }
     }
 

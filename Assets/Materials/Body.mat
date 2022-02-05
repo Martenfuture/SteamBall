@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Body
-  m_Shader: {fileID: -6465566751694194690, guid: 8f6ef8a17034e4d4d896b688814f0f95, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: cce49ddd058553846a64b08f1b6a17b7, type: 3}
   m_ShaderKeywords: _DETAIL_MULX2
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -32,6 +32,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_898e861574b34c798fc93ea41fe09747:
+        m_Texture: {fileID: 2800000, guid: 807f426425f632e43a1d5f74b13429e3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -93,6 +97,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_fe8ff95d24524161865dee8da3a4e0c9: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -107,7 +112,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Health: 1
+    - _Health: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -122,6 +127,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_6bcd1cca8e1d4ae6b8b1076185572fbb: {r: 0, g: 0, b: 0, a: 0}
+    - Color_74506deffeb24c63bc331f982c6438c9: {r: 0, g: 0, b: 0, a: 0}
+    - Color_7af2b1e245b142b4b81e9436bca83aa5: {r: 0, g: 0, b: 0, a: 0}
     - Color_813eb17b8a334c14b0aa080bf71c31d9: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
