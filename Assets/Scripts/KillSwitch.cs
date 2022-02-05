@@ -7,6 +7,7 @@ public class KillSwitch : MonoBehaviour
     public Vector3 LastCheckpoint;
 
     [SerializeField] private GameObject[] healthRenderers = new GameObject[0];
+    [SerializeField] int newCheckpointDelay;
 
     private bool setCheckpoint;
     private bool isPlayerAlive = true;
@@ -75,7 +76,7 @@ public class KillSwitch : MonoBehaviour
     {
         setCheckpoint = false;
         LastCheckpoint = transform.position;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(newCheckpointDelay);
         setCheckpoint = true;
     }
 
@@ -83,7 +84,6 @@ public class KillSwitch : MonoBehaviour
     {
         float currentDissolveValue = Mathf.Lerp(1, 0, t);
         t += 0.4f * Time.deltaTime;
-        Debug.Log(currentDissolveValue);
         foreach (GameObject objectDisolve in healthRenderers)
         {
             objectDisolve.GetComponent<Renderer>().material.SetFloat("Vector1_fe8ff95d24524161865dee8da3a4e0c9", currentDissolveValue);
