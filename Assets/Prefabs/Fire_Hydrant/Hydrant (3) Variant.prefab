@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 582c4e6ed6596d840adb502fc458a2ee, type: 2}
     - target: {fileID: -927199367670048503, guid: 8d2d477a8a3454e45a545f49a2001f77, type: 3}
       propertyPath: m_Name
-      value: Hydrant (3)
+      value: Hydrant (3) Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d2d477a8a3454e45a545f49a2001f77, type: 3}
@@ -78,6 +78,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8d2d477a8a3454e45a545f49a2001f77, type: 3}
   m_PrefabInstance: {fileID: 7880963726408997311}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1749851475930740459
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197514551222042806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5199306, y: 0.4936813, z: 0.95570993}
+  m_Center: {x: 0.040394615, y: -0.00000000877052, z: 0.4778549}
 --- !u!114 &73058240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,17 +103,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8ca4786b1a9574dbec6abdf2482f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceAmount: 10
---- !u!65 &1749851475930740459
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2197514551222042806}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5199306, y: 0.4936813, z: 0.95570993}
-  m_Center: {x: 0.040394615, y: -0.00000000877052, z: 0.4778549}
+  bounceAmount: 200
