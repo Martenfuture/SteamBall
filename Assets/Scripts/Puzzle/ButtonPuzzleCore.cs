@@ -22,7 +22,7 @@ public class ButtonPuzzleCore : MonoBehaviour
     private void Start()
     {
         if (IsRandom) GenerateButtonOrder();
-        ShowButtonOrder();
+        //ShowButtonOrder();
     }
     public void PressButton(GameObject Button)
     {
@@ -40,12 +40,23 @@ public class ButtonPuzzleCore : MonoBehaviour
             }
             else
             {
-                StartCoroutine(BlinkingSingleCoroutine(Button));
-                Debug.Log("Wrong Button");
-                wrongButtons++;
-                if (wrongButtons >= wrongButtonTries)
+                int buttonIndex = 0;
+                for (int n = 0; n <= ButtonTrigger.Length - 1; n++)
                 {
-                    resetButtons();
+                    if (ButtonTrigger[n] == Button)
+                    {
+                        buttonIndex = n;
+                    }
+                }
+                if (buttonIndex > CurrentButtonNumber)
+                {
+                    StartCoroutine(BlinkingSingleCoroutine(Button));
+                    Debug.Log("Wrong Button");
+                    wrongButtons++;
+                    if (wrongButtons >= wrongButtonTries)
+                    {
+                        resetButtons();
+                    }
                 }
             }
         }
@@ -75,9 +86,17 @@ public class ButtonPuzzleCore : MonoBehaviour
 
     IEnumerator BlinkingSingleCoroutine(GameObject Button)
     {
-        Button.GetComponent<Renderer>().material.SetVector("Vector3_b506aa2ca3f742a988d071bf89bf80d1", new Vector4(1, 0, 0));
+        int buttonIndex = 0;
+        for (int n = 0; n <= ButtonTrigger.Length - 1; n++)
+        {
+            if (ButtonTrigger[n] == Button)
+            {
+                buttonIndex = n;
+            }
+        }
+        ButtonVisual[buttonIndex].GetComponent<Renderer>().material.SetVector("Vector3_b506aa2ca3f742a988d071bf89bf80d1", new Vector4(1, 0, 0));
         yield return new WaitForSeconds(2);
-        Button.GetComponent<Renderer>().material.SetVector("Vector3_b506aa2ca3f742a988d071bf89bf80d1", new Vector4(0, 0, 0));
+        ButtonVisual[buttonIndex].GetComponent<Renderer>().material.SetVector("Vector3_b506aa2ca3f742a988d071bf89bf80d1", new Vector4(0, 0, 0));
     }
 
     private void resetButtons()
@@ -104,7 +123,7 @@ public class ButtonPuzzleCore : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         buttonsResetet = false;
-        ShowButtonOrder();
+        //ShowButtonOrder();
     }
 
     private void GenerateButtonOrder()

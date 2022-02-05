@@ -13,7 +13,6 @@ public class WayPoints : MonoBehaviour
 
     public float speed = 4f;
 
-    public bool isFlying;
 
     // Use this for initialization
     void Start()
@@ -25,7 +24,7 @@ public class WayPoints : MonoBehaviour
     void Update()
     {
         // check if we have somewere to walk
-        if (currentWayPoint < this.wayPointList.Length && isFlying)
+        if (currentWayPoint < this.wayPointList.Length)
         {
             if (targetWayPoint == null)
                 targetWayPoint = wayPointList[currentWayPoint];
