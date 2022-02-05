@@ -46,18 +46,24 @@ public class SimplePlatformTutorial : MonoBehaviour
 
         if (!isWaiting)
         {
-            if(Vector3.Distance(transform.position, destinationTarget.position) > 0.01f)
+            if (speed != 0)
             {
-                float distCovered = (Time.time - startTime) * speed;
+                if (Vector3.Distance(transform.position, destinationTarget.position) > 0.01f)
+                {
+                    float distCovered = (Time.time - startTime) * speed;
 
-                float fractionOfJourney = distCovered / journeyLength;
+                    float fractionOfJourney = distCovered / journeyLength;
 
-                transform.position = Vector3.Lerp(departTarget.position, destinationTarget.position, fractionOfJourney);
-            }
-            else
+                    transform.position = Vector3.Lerp(departTarget.position, destinationTarget.position, fractionOfJourney);
+                }
+                else
+                {
+                    isWaiting = true;
+                    StartCoroutine(changeDelay());
+                }
+            } else
             {
-                isWaiting = true;
-                StartCoroutine(changeDelay());
+                startTime = Time.time;
             }
         }
 

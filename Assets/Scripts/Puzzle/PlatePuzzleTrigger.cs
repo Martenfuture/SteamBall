@@ -5,15 +5,28 @@ using UnityEngine;
 public class PlatePuzzleTrigger : MonoBehaviour
 {
     public int TriggerCollider;
+    private int id;
+    private bool isTriggert;
+    private void Start()
+    {
+        id = transform.parent.GetComponent<PlatePuzzleCore>().id;
+    }
     // Needs Juice
     private void OnTriggerEnter(Collider other)
     {
-        TriggerCollider++;
-        transform.parent.GetComponent<PlatePuzzleCore>().PlateTriggert();
+        if (!isTriggert)
+        {
+            GameEvents.puzzleButton.ButtonTriggerEnter(id);
+            isTriggert = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        TriggerCollider--;
+        if (isTriggert)
+        {
+            GameEvents.puzzleButton.ButtonTriggerEnter(id);
+            isTriggert = false;
+        }
     }
 }
