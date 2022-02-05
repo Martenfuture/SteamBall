@@ -13,6 +13,8 @@ public class WayPoints : MonoBehaviour
 
     public float speed = 4f;
 
+    public bool isFlying;
+
     // Use this for initialization
     void Start()
     {
@@ -23,13 +25,14 @@ public class WayPoints : MonoBehaviour
     void Update()
     {
         // check if we have somewere to walk
-        if (currentWayPoint < this.wayPointList.Length)
+        if (currentWayPoint < this.wayPointList.Length && isFlying)
         {
             if (targetWayPoint == null)
                 targetWayPoint = wayPointList[currentWayPoint];
             walk();
         }
     }
+
 
     void walk()
     {
@@ -39,7 +42,7 @@ public class WayPoints : MonoBehaviour
         // move towards the target
         transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.position, speed * Time.deltaTime);
 
-        if (transform.position == targetWayPoint.position)
+        if (transform.position == targetWayPoint.position && wayPointList.Length - 1 != currentWayPoint)
         {
             currentWayPoint++;
             targetWayPoint = wayPointList[currentWayPoint];
