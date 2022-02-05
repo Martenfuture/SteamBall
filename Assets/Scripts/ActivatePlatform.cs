@@ -14,7 +14,7 @@ public class ActivatePlatform : MonoBehaviour
     {
         if (id == PlatformId)
         {
-            gameObject.GetComponent<SimplePlatformTutorial>().speed = 5;
+            gameObject.GetComponent<SimplePlatformTutorial>().speed = 3;
         }
     }
 }
