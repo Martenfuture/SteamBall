@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
-  m_Shader: {fileID: -6465566751694194690, guid: cce49ddd058553846a64b08f1b6a17b7, type: 3}
-  m_ShaderKeywords: _DETAIL_MULX2
+  m_Name: HandNew
+  m_Shader: {fileID: -6465566751694194690, guid: 335393b3628e80841a607d8ebffbd825, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_898e861574b34c798fc93ea41fe09747:
-        m_Texture: {fileID: 2800000, guid: b8f32093b55cecb40b0716a60a74f42d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
-        m_Texture: {fileID: 2800000, guid: b8f32093b55cecb40b0716a60a74f42d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
@@ -108,14 +108,16 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_74506deffeb24c63bc331f982c6438c9: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+    - Color_3a8fcd858103482b8734d61d113c76a0: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
+    - Color_74506deffeb24c63bc331f982c6438c9: {r: 1, g: 0, b: 0, a: 0}
     - Color_7af2b1e245b142b4b81e9436bca83aa5: {r: 0, g: 0, b: 0, a: 0}
+    - Color_e2cc3387eae2445b8fb7953ccd3799fb: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &132885392446713974
+--- !u!114 &4840529465960446523
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
